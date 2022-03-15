@@ -20,15 +20,12 @@ const clientSchema = new Schema(
         },
         businessName: { 
             type: String, 
-            required
         },
         providers : {
             type: Array,
-            required
         },
         sales : {
-            types : String,
-            required
+            type : String,
         }
     },
     {
