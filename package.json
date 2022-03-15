@@ -1,0 +1,48 @@
+{
+  "name": "finaktiva",  
+  "private": true,
+  "version": "1.0.0",
+  "description": "1. [Info General](#información-general )\r 2. [Tecnologías](#tecnologías)\r 3. [Instalación](#instalación)\r 4. [Usuario](#usuario)\r 5. [Pre-requisitos](#pre-requisitos)\r 6. [Despliegue](#despliegue)\r 7. [Librerías Usadas](#librerías-usadas)\r 8. [Expresiones de Gratitud](#expresiones-de-gratitud)",
+  "main": "index.js",
+  "workspaces": [
+    "api",
+    "client"
+  ],
+  "engines": {
+    "npm":"7.23.0"
+  },  "scripts": {
+    "build": "SKIP_PREFLIGHT_CHECK=true npm run build --workspace=client",
+    "start": "npm run start --workspace=api",
+    "dev:api": "npm run build && npm run dev --workspace=api",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "eslintConfig": {
+    "ignorePatterns": "build",
+    "extends":[
+      "react-app",
+      "react-app/jest",
+      "./node_modules/standard/eslintrc.json"
+    ],
+    "env": {
+      "cypress/globals": true,
+      "jest": true
+    },
+    "plugins": [
+      "cypress"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidB2ya/Clients-Register.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "David Bedoya (B2ya)",
+    "email": "dbedoya0408@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidB2ya/Clients-Register/issues"
+  },
+  "homepage": "https://github.com/davidB2ya/Clients-Register#readme"
+}
