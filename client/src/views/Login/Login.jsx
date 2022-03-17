@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../sass/app.scss';
 import Img from '../../assets/finaktiva-2.png'
+import { AppContext } from '../../contexts/AppContext.js'
 
 const Login = () => {
+
+    const { addUser } = useContext(AppContext);
 
     const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const location = useLocation();
 
     // const baseUrl = 'http://localhost:3001'
 
@@ -23,8 +25,7 @@ const Login = () => {
             body: JSON.stringify({
                 name,
                 email,
-                password,
-                location,
+                password
             }),
         });
 
@@ -32,11 +33,13 @@ const Login = () => {
         console.log(data);
 
         if (data.msg === 'Login success!') {
+            addUser(data)
             navigate("/home")
         } else {
             alert("Ingreso fallido")
         }
     }
+
     async function registerUser() {
         navigate("/register")
     }

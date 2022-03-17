@@ -1,8 +1,9 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Img from '../assets/finaktiva-2.png'
 import Img2 from '../assets/1626119281576.jfif'
+import { AppContext } from '../contexts/AppContext'
 
 const navigation = [
     { name: 'Home', href: '/home', current: true },
@@ -14,6 +15,8 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 const NavBar = () => {
+
+    const { avatar, signOut } = useContext(AppContext);
 
     return (
         <Disclosure as="nav" className="bg-gray-500">
@@ -79,7 +82,7 @@ const NavBar = () => {
                                             <span className="sr-only">Open user menu</span>
                                             <img
                                                 className="h-8 w-8 rounded-full"
-                                                src="https://i.ibb.co/BCQhnLT/avataaars.png"
+                                                src={avatar}
                                                 alt=""
                                             />
                                         </Menu.Button>
@@ -110,7 +113,7 @@ const NavBar = () => {
                                                         href="/"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
-                                                        Sign out
+                                                        <button onClick={signOut}>Sign out</button>
                                                     </a>
                                                 )}
                                             </Menu.Item>

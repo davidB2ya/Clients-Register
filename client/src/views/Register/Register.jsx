@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Img from '../../assets/images.jfif'
 
 const Register = () => {
 
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,7 +28,10 @@ const Register = () => {
         });
 
         const data = await response.json();
-        console.log(data);
+        console.log(data.msg)
+        if (data.msg === 'User has been create!') {
+            navigate("/")
+        }
     }
 
     return (
@@ -59,7 +63,7 @@ const Register = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
-                        placeholder="Contraseña"
+                        placeholder="Contraseña más de 6 carácteres"
                         autoComplete='false'
                     />
                     <br />

@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Home from './views/Home/Home';
 import Login from './views/Login/Login';
-import Register from './views/Login/Register';
+import Register from './views/Register/Register';
 import AddClient from './components/AddClient';
 import EditClient from './components/EditClient';
 import Modal from './components/Modal';

@@ -1,11 +1,14 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import '../sass/app.scss'
 import { BiDetail } from 'react-icons/bi'
 import Alert from './Alert';
+import { AppContext } from '../contexts/AppContext'
 
 const ListClients = () => {
+
+    const { id_user} = useContext(AppContext);
 
     const [updateState, setUpdateState] = useState(false)
     const [showAlert, setShowAlert] = useState(false);
@@ -13,7 +16,7 @@ const ListClients = () => {
 
     useEffect(() => {
         axios({
-            url: '/api/clients/all-clients'
+            url: `/api/clients/all-clients/${id_user}`
         })
             .then(response => {
                 setClients(response.data)

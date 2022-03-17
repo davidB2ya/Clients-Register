@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import Alert from './Alert';
 import NavBar from './NavBar';
+import { AppContext } from '../contexts/AppContext'
 
 const AddClient = () => {
 
-
+    const { id_user } = useContext(AppContext);
+    
     const [showAlert, setShowAlert] = useState(false);
     const [color, setColor] = useState(false);
 
@@ -26,9 +28,10 @@ const AddClient = () => {
             businessName: businessName,
             providers: providers,
             sales: sales,
+            id_user : id_user,
         })
             .then(response => {
-                setShowAlert(!showAlert)
+                setShowAlert(true)
                 setColor(true)
             })
             .catch(error => {
@@ -85,7 +88,7 @@ const AddClient = () => {
                 </div>
                 <div className="flex items-center justify-between">
                     <button className="mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Add Employee
+                        Agregar Cliente
                     </button>
                 </div>
                 <Link to="/home">
