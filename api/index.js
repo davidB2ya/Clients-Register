@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(allRoutes);
-app.use(express.static(path.join('../client/build')))
+app.use(express.static('../client/build'))
 
 // Setting
 const port = process.env.PORT || '3001'
