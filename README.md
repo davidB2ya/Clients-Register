@@ -13,7 +13,19 @@
 
 ## Información General 💻
 
+#### En este proyecto se deseaba tener una base de datos con clientes. Se necesitaba crear dichos clientes , editarlos , eliminarlos y buscarlos.
 
+* Vista del Home de la app
+
+![Image text](/Assets-README/Home.jpg)
+
+#### Ejemplos de Peticiones en Postman
+
+* Get para obtener los clientes
+![Image text](/Assets-README/Get%20de%20Clientes.jpg)
+
+* Post para crear un cliente
+![Image text](/Assets-README/Post%20de%20Nuevo%20Cliente.jpg)
 
 ## Tecnologías 🔬
 * [React.JS](https://es.reactjs.org/): Version 17.0.2 
@@ -89,4 +101,4 @@ https://clients-register-b2ya.herokuapp.com/
 ---
 ⌨️ con ❤️ por [davidB2ya](https://david-bedoya.vercel.app) 😊👍🏻
 
-![Image text](https://i.ibb.co/2M675j0/Logo-Dav
+![Image text](https://i.ibb.co/2M675j0/Logo-David-04.png)
