@@ -40,10 +40,9 @@ registerRouter.post('/', async (req, res) => {
             passwordHash,
             role
         });
-        console.log(newUser);
 
         await newUser.save();
-        res.json({ msg: 'User has been create!' });
+        res.send({ msg: 'User has been create!' });
     } catch (err) {
         return res.status(500).json({ msg: err.message })
     }
@@ -67,12 +66,10 @@ loginRouter.post('/', async (req, res) => {
             })
         }
 
-        // const refresh_token = createRefreshToken({ id: user._id })
-        // console.log(refresh_token)
         res.send({
             email: user.email,
-            role: user.role,
-            // refresh_token,
+            avatar: user.avatar,
+            id : user._id,
             msg: 'Login success!'
         })
     } catch (err) {

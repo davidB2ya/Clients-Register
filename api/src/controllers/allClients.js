@@ -7,9 +7,20 @@ const deleteClientsRouter = require('express').Router();
 const oneClientsRouter = require('express').Router();
 
 // Get all clients
-allClientsRouter.get('/all-clients', async (req, res) => {
+allClientsRouter.get('/all-clients/:id', async (req, res) => {
+    let id = req.params.id
     try {
-        const clients = await client.find()
+        const clients = await client.find({
+            id_user: id,
+        },
+        {
+            name: 1,           
+            documenType : 1,
+            document : 1,
+            businessName: 1,
+            providers : 1,
+            sales : 1,
+        })
         res.json(clients)
     } catch (error) {
         next(error)
@@ -43,6 +54,7 @@ createClientsRouter.post('/create-client', async (req, res) => {
             businessName: req.body.businessName,
             providers: req.body.providers,
             sales: req.body.sales,
+            id_user: req.body.id_user
         })
         await newClient.save()
         res.json({ msg: 'New client successfully created' })

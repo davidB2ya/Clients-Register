@@ -1,8 +1,15 @@
 const { Schema, model } = require('mongoose');
 
+// required models
+const User = require('../models/User')
+
 // schema creation for clients
 const clientSchema = new Schema(
     {
+        id_user: { 
+            type: Schema.ObjectId,
+            ref: User
+        },
         name: {
             type: String,
             required: [true, 'Please enter your name!'],

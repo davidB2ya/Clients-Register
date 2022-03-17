@@ -18,6 +18,10 @@ const userSchema = new Schema(
             type: String,
             required: [true, 'Please enter your password!']
         },
+        avatar : {
+            type: String,
+            default: 'https://i.ibb.co/wydDGF8/avatardefault-92824.png'
+        },
         state: {
             // habilitarlo
             type: Boolean,
