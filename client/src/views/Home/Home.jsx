@@ -1,16 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ListClients from '../../components/ListClients'
+import Navbar from '../../components/NavBar'
 
 const Home = () => {
 
   return (
     <div className="Home">
       <div className="container mx-auto">
-        <h3 className="text-center text-3xl mt-20 leading-8 text-black font-bold tracking-wide uppercase">
+        
+        {/* <h3 className="text-center text-3xl mt-20 leading-8 text-black font-bold tracking-wide uppercase">
           Listado de todos los clientes
-        </h3>
-        <div className="flex items-center mt-24 mb-10">
+        </h3> */}
+        <Navbar />
+        <div className="flex items-center mt-4 mb-10">
           <div className="flex-grow text-left px-4 py-2 m-2">
             <h5 className="text-gray-900 font-bold text-xl">Información</h5>
           </div>

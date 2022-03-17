@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Alert from './Alert'
+import NavBar from './NavBar';
 
 const EditClient = () => {
 
@@ -56,7 +57,8 @@ const EditClient = () => {
     };
 
     return (
-        <>
+        <>  
+            <NavBar/>
 
             {showAlert ? <Alert color={color} /> : null}
 
@@ -109,9 +111,11 @@ const EditClient = () => {
                     </button>
                 </div>
                 <div className="text-center mt-4 text-gray-500">
-                    <div className="cursor-pointer text-center bg-red-400 mt-4 w-full hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
-                        <Link to="/home">Cancel</Link>
-                    </div>
+                    <Link to="/home">
+                        <div className="cursor-pointer text-center bg-red-400 mt-4 w-full hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
+                            <Link to="/home">Cancel</Link>
+                        </div>
+                    </Link>
                 </div>
             </form>
         </>

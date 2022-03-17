@@ -7,7 +7,6 @@ import Alert from './Alert';
 
 const ListClients = () => {
 
-    const [clients, setClients] = useState([])
     const [updateState, setUpdateState] = useState(false)
     const [showAlert, setShowAlert] = useState(false);
     const [color, setColor] = useState(true);
@@ -18,6 +17,7 @@ const ListClients = () => {
         })
             .then(response => {
                 setClients(response.data)
+                setSearch(response.data)
             })
             .catch(error => {
                 console.log(error)
@@ -39,6 +39,18 @@ const ListClients = () => {
             })
     }
 
+    const [clients, setClients] = useState([])
+    const [searchClient, setSearch] = useState(clients)
+
+    const inputChange = (e) => {
+        const search = e.target.value.toLowerCase().trim()
+        if (search === '') {
+            setSearch(clients)
+        } else {
+            const filter = clients.filter(c => c.name.toLowerCase().startsWith(search))
+            setSearch(filter)
+        }
+    }
 
     return (
         <>
@@ -48,9 +60,16 @@ const ListClients = () => {
                 </div>
                 :
                 <div>
+                        <form  >
+                            <div className=" flex w-80 items-center mb-4 mx-4">
+                                <input type="text" onChange={(e) => inputChange(e)} placeholder="Buscar Cliente" className="px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white rounded text-lg border-0 shadow outline-none focus:outline-none focus:ring w-full pr-10"/>
+                            </div>
+                        </form>
                     {showAlert ? <Alert color={color} /> : null}
-                    {clients.map((client) => (
+
+                    {searchClient.map((client) => (
                         <div className="flex items-center bg-gray-100 mb-10 shadow" key={client.id}>
+                            
                             <div className="flex-auto text-left px-4 py-2 m-2">
                                 <p className="text-gray-900 leading-none">{client.name}</p>
                                 <p className="text-gray-600">{client.documenType} : {client.document}</p>

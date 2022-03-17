@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import Alert from './Alert';
+import NavBar from './NavBar';
 
 const AddClient = () => {
 
@@ -37,7 +38,7 @@ const AddClient = () => {
 
     return (
         <>
-
+            <NavBar/>
             {showAlert ? <Alert color={color} /> : null}
             <form className="w-full max-w-sm container mt-10 mx-auto" onSubmit={onSubmit}>
                 <div className="w-full mb-3">
@@ -87,9 +88,11 @@ const AddClient = () => {
                         Add Employee
                     </button>
                 </div>
-                <div className="cursor-pointer text-center bg-red-400 mt-4 w-full hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
-                    <Link to="/home">Cancel</Link>
-                </div>
+                <Link to="/home">
+                    <div className="cursor-pointer text-center bg-red-400 mt-4 w-full hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
+                        <Link to="/home">Cancel</Link>
+                    </div>
+                </Link>
             </form>
         </>
     )

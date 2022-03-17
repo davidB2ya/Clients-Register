@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../../sass/app.scss';
+import Img from '../../assets/finaktiva-2.png'
 
 const Login = () => {
 
@@ -43,8 +44,8 @@ const Login = () => {
     return (
         <div className='Login'>
             <div className='Card_Login'>
-                {/* <img src={ImgCriptos} alt="img criptos" ></img> */}
-                <h1>Entrar</h1>
+                <img src={Img} alt="img fanaktiva" ></img>
+                {/* <h1>Entrar</h1> */}
                 <form onSubmit={loginUser}>
                     <input
                         className="inputLogin"

@@ -26,22 +26,8 @@
         img {
             width : 400px;
             height: 150px;
+            margin-bottom   : 40px;
         }
-    }
-
-    h1 {
-        color           : $primary;
-        font-family     : $fontRedressed;
-        font-size       : 40px;
-        font-style      : normal;
-        font-weight     : normal;
-        margin-top      : -150px;
-        margin-bottom   : 140px;
-        background-color: $gold_dark;
-        width           : 180px;
-        padding-left    : .5em;
-        padding-right   : .5em;
-        border-radius   : 0px 0px 20px 0;
     }
 
     .inputLogin {
@@ -87,7 +73,7 @@
 
         &:hover {
             background-color: $gold_dark;
-            box-shadow      : 0px 15px 20px rgba(245, 209, 7, 0.308);
+            box-shadow      : 0px 15px 20px #65dc96bd;
             color           : $blue_dark;
             transform       : translateY(-7px);
         }

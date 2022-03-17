@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
+import Img from '../../assets/images.jfif'
 
 const Register = () => {
 
@@ -32,8 +33,8 @@ const Register = () => {
     return (
         <div className='Login'>
             <div className='Card_Login'>
-                {/* <img src={ImgCriptos} alt="img criptos" ></img> */}
-                <h1>Registrarse</h1>
+                <img src={Img} alt="img Finaktiva" ></img>
+                {/* <h1>Registrarse</h1> */}
                 <form onSubmit={registerUser}>
                     <input
                         className="inputLogin"
