@@ -1,4 +1,4 @@
-# Clients Register B2ya 💰
+# Clients Register B2ya 📁
 
 1. [Info General](#información-general )
 2. [Tecnologías](#tecnologías)
@@ -15,7 +15,7 @@
 
 
 
-## Tecnologías 🛠
+## Tecnologías 🔬
 * [React.JS](https://es.reactjs.org/): Version 17.0.2 
 * [Node.JS](https://nodejs.org/es/): Version 14.17.6
 * [Express.JS](https://expressjs.com/es/): Version 4.17.3
@@ -60,7 +60,7 @@ Open the browser on the port: http://localhost:3001
 _Aquí debajo dejo el link del proyecto desplegado_
                 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
 
-https://
+https://clients-register-b2ya.herokuapp.com/
 ***
 
 ## Librerías Usadas 🏛
@@ -75,6 +75,7 @@ https://
 * **nodemon** : **_Nodemon es una herramienta que ayuda a desarrollar aplicaciones basadas en Node.js al reiniciar automáticamente la aplicación del node cuando se detectan cambios en los archivos del directorio._**
 * **morgan** : **_Middleware de registro de solicitudes HTTP para node.js_**
 * **mongoose** : **_Mongoose es una herramienta de modelado de objetos MongoDB diseñada para trabajar en un entorno asíncrono. Mongoose admite tanto promesas como devoluciones de llamada_**
+* **sass** : **_La uso para compilar código con la extención SASS_**
 
 ***
 
