@@ -20,6 +20,8 @@
 * [Node.JS](https://nodejs.org/es/): Version 14.17.6
 * [Express.JS](https://expressjs.com/es/): Version 4.17.3
 * [Mongo DB](https://www.mongodb.com/es): Version 4.2.2
+* [Tailwind CSS](https://tailwindui.com/): Version 2.2.17
+* [SASS](https://sass-lang.com/): Version 1.49.9
 
 ***
 
@@ -42,6 +44,8 @@ Open the browser on the port: http://localhost:3001
 - nombre : David Bedoya
 - correo :  adminDavid@gmail.com
 - contraseña : 123456789
+
+>O registrese y entre con su usuario
 
 ***
 ## Pre-requisitos 📋

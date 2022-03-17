@@ -20,7 +20,7 @@ const EditClient = () => {
 
     useEffect(() => {
         axios({
-            url: `http://localhost:3001/api/clients/one/${id}`
+            url: `/api/clients/one/${id}`
         })
             .then(response => {
                 setClient(response.data)
@@ -38,7 +38,7 @@ const EditClient = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:3001/api/clients/update-client/${client.id}`, {
+        axios.post(`/api/clients/update-client/${client.id}`, {
             name: name,
             documenType: typeDocument,
             document: document,

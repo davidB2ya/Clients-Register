@@ -18,7 +18,7 @@ const AddClient = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/api/clients/create-client', {
+        axios.post('/api/clients/create-client', {
             name: name,
             documenType: typeDocument,
             document: document,

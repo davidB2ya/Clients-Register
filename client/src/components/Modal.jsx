@@ -9,7 +9,7 @@ const Modal = () => {
 
   useEffect(() => {
     axios({
-      url: `http://localhost:3001/api/clients/one/${id}`
+      url: `/api/clients/one/${id}`
     })
       .then(response => {
         setClient(response.data)

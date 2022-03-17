@@ -14,7 +14,7 @@ const ListClients = () => {
 
     useEffect(() => {
         axios({
-            url: 'http://localhost:3001/api/clients/all-clients'
+            url: '/api/clients/all-clients'
         })
             .then(response => {
                 setClients(response.data)
@@ -27,7 +27,7 @@ const ListClients = () => {
     const removeClient = (id) => {
         axios({
             method: "delete",
-            url: `http://localhost:3001/api/clients/delete-client/${id}`
+            url: `/api/clients/delete-client/${id}`
         })
             .then(response => {
                 setShowAlert(true)
