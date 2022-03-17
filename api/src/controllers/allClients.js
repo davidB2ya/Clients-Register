@@ -4,6 +4,7 @@ const allClientsRouter = require('express').Router();
 const createClientsRouter = require('express').Router();
 const updateClientsRouter = require('express').Router();
 const deleteClientsRouter = require('express').Router();
+const oneClientsRouter = require('express').Router();
 
 // Get all clients
 allClientsRouter.get('/all-clients', async (req, res) => {
@@ -52,33 +53,40 @@ createClientsRouter.post('/create-client', async (req, res) => {
 })
 
 //  Post update a client
-updateClientsRouter.post('/update-client', async (req, res) => {
-    const body = req.body
+updateClientsRouter.post('/update-client/:id', async (req, res) => {
+    let id = req.params.id
+    const { name, documenType, document, businessName, providers, sales } = req.body
+    
+    if (documenType === "CE" || documenType !== "CC")
+    return res.status(400).json({ msg: 'Invalid Document Type.' })
+
+    if (document.length < 10)
+    return res.status(400).json({ msg: 'Invalid Document.' })
 
     client.updateOne(
-        { _id:  body.id },
+        { _id:  id},
         {
             $set: {
-                name: body.name,
-                documenType: body.documenType,
-                document: body.document,
-                businessName: body.businessName,
-                providers: body.providers,
-                sales: body.sales
+                name: name,
+                documenType: documenType,
+                document: document,
+                businessName: businessName,
+                providers: providers,
+                sales: sales
             }
         },
     ).then(function() {
-        res.json({msg: 'Client updated successfully'})
+        res.status(200).json({msg: 'Client updated successfully'})
     })
     .catch(error => console.error(error))
 })
 
 // Delete a client
-deleteClientsRouter.delete('/delete-client', async (req, res) => {
-    const body = req.body
+deleteClientsRouter.delete('/delete-client/:id', async (req, res) => {
+    let id = req.params.id
 
     client.deleteOne(
-        { _id:  body.id }
+        { _id: id }
     ).then(function() {
         res.json({msg: 'Client removed successfully'})
     })
@@ -86,9 +94,18 @@ deleteClientsRouter.delete('/delete-client', async (req, res) => {
 })
 
 
+// Get search a client
+oneClientsRouter.get('/one/:id', async (req, res) => {
+    let id = req.params.id
+    const getOneClient = await client.findById({ _id : id })  
+    res.json(getOneClient)
+    
+})
+
 module.exports = {
     allClientsRouter,
     createClientsRouter,
     updateClientsRouter,
-    deleteClientsRouter
+    deleteClientsRouter,
+    oneClientsRouter
 }
