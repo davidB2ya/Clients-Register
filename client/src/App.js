@@ -5,6 +5,7 @@ import Login from './views/Login/Login';
 import Register from './views/Login/Register';
 import AddClient from './components/AddClient';
 import EditClient from './components/EditClient';
+import Modal from './components/Modal';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/home' element={<Home />} exact />
         <Route path='/add' element={<AddClient />} exact />
         <Route path='/edit/:id' element={<EditClient />} exact />
+        <Route path='/modal/:id' element={<Modal />} exact />
 
       </Routes>
     </div>
