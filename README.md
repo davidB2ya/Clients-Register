@@ -15,6 +15,10 @@
 
 #### En este proyecto se deseaba tener una base de datos con clientes. Se necesitaba crear dichos clientes , editarlos , eliminarlos y buscarlos.
 
+> En este proyecto se realizó una estructura de carpetas bajo los conceptos de la metodología **Clean Architecture**
+
+![Image text](/Assets-README/Estructura%20de%20Carpetas%20Frontend.jpg)![Image text](/Assets-README/Estructura%20de%20Carpetas%20Backend.jpg)
+
 * Vista del Home de la app
 
 ![Image text](/Assets-README/Home.jpg)
