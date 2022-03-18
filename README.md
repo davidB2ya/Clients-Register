@@ -72,7 +72,8 @@ Open the browser on the port: http://localhost:3001
 _Aquí debajo dejo el link del proyecto desplegado_
                 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
 
-https://clients-register-b2ya.herokuapp.com/
+* Deploy Frontend Vercel : https://clients-register-deploy-frontend.vercel.app/
+* Deploy MonoRepo Heroku : https://clients-register-b2ya.herokuapp.com/
 ***
 
 ## Librerías Usadas 🏛
