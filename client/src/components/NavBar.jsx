@@ -1,6 +1,6 @@
 import { Fragment, useContext } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Img from '../assets/finaktiva-2.png'
 import Img2 from '../assets/1626119281576.jfif'
 import { AppContext } from '../contexts/AppContext'
@@ -67,13 +67,13 @@ const NavBar = () => {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <button
+                                {/* <button
                                     type="button"
                                     className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
                                     <span className="sr-only">View notifications</span>
                                     <BellIcon className="h-6 w-6" aria-hidden="true" />
-                                </button>
+                                </button> */}
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="ml-3 relative">
@@ -103,7 +103,7 @@ const NavBar = () => {
                                                         href="https://david-bedoya.vercel.app"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
-                                                        Your Profile
+                                                        Perfil
                                                     </a>
                                                 )}
                                             </Menu.Item>
@@ -113,7 +113,7 @@ const NavBar = () => {
                                                         href="/"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
-                                                        <button onClick={signOut}>Sign out</button>
+                                                        <button onClick={signOut}>Cerrar Sesión</button>
                                                     </a>
                                                 )}
                                             </Menu.Item>

@@ -54,7 +54,7 @@ const loginRouter = require('express').Router();
 
 loginRouter.post('/', async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, name } = req.body;
 
         const user = await User.findOne({ email });
 
@@ -66,10 +66,17 @@ loginRouter.post('/', async (req, res) => {
             })
         }
 
+        if (name !== user.name){
+            return res.status(401).json({
+                error: 'Invalid name user'
+            })
+        }
+
         res.send({
             email: user.email,
             avatar: user.avatar,
             id : user._id,
+            name : user.name,
             msg: 'Login success!'
         })
     } catch (err) {

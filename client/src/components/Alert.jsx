@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Alert = ({ color }) => {
 
@@ -29,12 +29,15 @@ const Alert = ({ color }) => {
                             <span className="inline-block align-middle mr-8">
                                 <b className="capitalize">Cliente !</b> {letter} satisfactoriamente
                             </span>
-                            <button
-                                className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
-                                onClick={() => setShowAlert(false)}
-                            >
-                                <span>×</span>
-                            </button>
+                            <Link to="/home">
+                                <button
+                                    className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
+                                    onClick={() => setShowAlert(false)}>
+                                    
+                                        <span>×</span>
+                                    
+                                </button>
+                            </Link>
                         </div>
                     ) : null}
                 </>

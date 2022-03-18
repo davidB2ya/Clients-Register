@@ -25,7 +25,7 @@ const ListClients = () => {
             .catch(error => {
                 console.log(error)
             })
-    }, [updateState])
+    }, [id_user])
 
     const removeClient = (id) => {
         axios({
